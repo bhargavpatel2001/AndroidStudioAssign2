@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/BhargavHelp"
+        android:title="Help">
+    </item>
+
+    <item
+        android:id="@+id/BhargavAddons"
+        app:showAsAction="ifRoom"
+        android:title="Bhargav">
+    </item>
+
+    <item
+        android:id="@+id/BhargavImage"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@mipmap/pizza_icon_round"></item>
+</menu>
