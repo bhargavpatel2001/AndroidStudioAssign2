@@ -4,16 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4B5CBD"
     tools:context=".BhargavActivity">
 
-    <TextView
-        android:id="@+id/BhargavTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MainId"
+<!--    <TextView-->
+<!--        android:id="@+id/BhargavTV"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/MainId"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.862" />-->
+
+    <RadioGroup
+        android:id="@+id/BhargavRGroup"
+        android:layout_width="338dp"
+        android:layout_height="305dp"
+        android:background="#4B5CBD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/BhargavStore1"
+            android:layout_width="335dp"
+            android:layout_height="102dp"
+            android:drawableRight="@mipmap/little_caesars_pizza_round"
+            android:text="Little Caesars Pizza"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/BhargavStore2"
+            android:layout_width="335dp"
+            android:layout_height="95dp"
+            android:drawableRight="@mipmap/boston_pizza"
+            android:text="Boston Pizza" />
+
+        <RadioButton
+            android:id="@+id/BhargavStore3"
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/pizza_pizza_foreground"
+            android:text="Pizza Pizza" />
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/BhargavMvScreen"
+        android:layout_width="119dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="216dp"
+        android:text="Choose Store"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

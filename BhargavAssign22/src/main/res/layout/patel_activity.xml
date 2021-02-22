@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4B5CBD"
+    tools:context=".PatelActivity">
+
+    <!--Pizza Type-->
+
+    <!--Radio Group for Pizza size -->
+
+    <!--    CheckBoxes for Pizza Toppings-->
+
+    <RadioGroup
+        android:id="@+id/BhargavRGroup2"
+        android:layout_width="150dp"
+        android:layout_height="192dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34">
+
+        <TextView
+            android:id="@+id/BhargavPType"
+            android:layout_width="148dp"
+            android:layout_height="43dp"
+            android:text="Choose a pizza types" />
+
+        <RadioButton
+            android:id="@+id/BhargavPType1"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:text="Margherita"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/BhargavPType2"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Pepperoni"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/BhargavPType3"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Chesse"></RadioButton>
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/BhargavRGroup3"
+        android:layout_width="222dp"
+        android:layout_height="196dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.343">
+
+        <TextView
+            android:id="@+id/BhargavPSize"
+            android:layout_width="148dp"
+            android:layout_height="43dp"
+            android:text="Choose a pizza Size" />
+
+        <RadioButton
+            android:id="@+id/BhargavPSize1"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Small"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/BhargavPSize2"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Medium"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/BhargavPSize3"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:text="Large"></RadioButton>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/BhargavPToppings"
+        android:layout_width="196dp"
+        android:layout_height="29dp"
+        android:text="Choose your Toppings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <CheckBox
+        android:id="@+id/BhargavPToppings4"
+        android:layout_width="128dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="196dp"
+        android:text="Black Olives"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings"
+        app:layout_constraintVertical_bias="1.0"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/BhargavPToppings3"
+        android:layout_width="128dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="72dp"
+        android:text="Extra Cheese"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings1"
+        app:layout_constraintVertical_bias="1.0"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/BhargavPToppings2"
+        android:layout_width="128dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="132dp"
+        android:text="Mushrooms"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings5"
+        app:layout_constraintVertical_bias="1.0"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/BhargavPToppings1"
+        android:layout_width="128dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="104dp"
+        android:text="Jalapenos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings2"
+        app:layout_constraintVertical_bias="0.0"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/BhargavPToppings5"
+        android:layout_width="128dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="164dp"
+        android:text="Green Peppers"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings4"
+        app:layout_constraintVertical_bias="1.0"></CheckBox>
+
+    <TextView
+        android:layout_width="41dp"
+        android:layout_height="23dp"
+        android:layout_marginBottom="28dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings3"
+        app:layout_constraintVertical_bias="1.0"></TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,10 @@
 
 package bhargav.patel.n01373029;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
@@ -13,48 +15,64 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class BhargavActivity extends AppCompatActivity {
-Intent intent = null;
-String webs;
+    // defining  Global variables
+    String webs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btn = (Button)findViewById(R.id.BhargavMvScreen);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BhargavActivity.this, PatelActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+    // Function onPrepareOptionsMenu
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        RadioButton pizzaLc=findViewById(R.id.BhargavStore1);
-        RadioButton pizzaB=findViewById(R.id.BhargavStore2);
-        RadioButton pizzaP=findViewById(R.id.BhargavStore3);
 
-        pizzaLc.setOnClickListener(new View.OnClickListener(){
+        // Defining Radio Buttons
+        RadioButton pizzaLc = findViewById(R.id.BhargavStore1);
+        RadioButton pizzaB = findViewById(R.id.BhargavStore2);
+        RadioButton pizzaP = findViewById(R.id.BhargavStore3);
+
+        // First shops setOnClickListener. Basically when they select first radio button and clicks on the image button.
+        pizzaLc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.little_caesars_pizza_round);
-                            webs="https://littlecaesars.ca";
+                webs = "https://littlecaesars.ca";
             }
         });
 
+        // Second shops setOnClickListener. Basically when they select second radio button and clicks on the image button.
         pizzaB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.boston_pizza_round);
-                            webs="https://bostonpizza.com";
-
+                webs = "https://bostonpizza.com";
             }
         });
 
+        // Third Stores setOnClickListener. Basically when they select third radio button and clicks on the image button.
         pizzaP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.pizza_pizza_round);
-                            webs="https://www.pizzapizza.ca";
+                webs = "https://www.pizzapizza.ca";
             }
         });
         return super.onPrepareOptionsMenu(menu);
@@ -68,12 +86,15 @@ String webs;
         inflater.inflate(R.menu.pizza_menu, menu);
         return true;
     }
-//Menu's onOptionsItemSelected Cases
+
+    //Menu's onOptionsItemSelected Cases
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent intent = null;
         // Handle item selection
         switch (item.getItemId()) {
+
+            // If the Help button is pressed execute this
             case R.id.BhargavHelp:
                 Toast toast = Toast.makeText(getApplicationContext(), "Tell your friend to get the app and ask them",
                         Toast.LENGTH_LONG);
@@ -83,25 +104,75 @@ String webs;
                 startActivity(intent);
                 break;
 
+            // If the Image button is pressed execute this
             case R.id.BhargavImage:
                 Toast.makeText(this, "This is the original website for your pizza store selected", Toast.LENGTH_LONG).show();
                 intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse(webs));
                 startActivity(intent);
-
                 break;
 
+            // If the myName button is pressed execute this
             case R.id.BhargavAddons:
                 Toast.makeText(this, "Please do not click this and wake me up", Toast.LENGTH_LONG).show();
                 break;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
         return true;
     }
 
+//OnBackKeyPressed
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Closing Activity")
+                .setMessage("Are you sure you want to close this activity?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
 }
+
+// long code for Alert Dialog box
+//    @Override
+//    public void onBackPressed(){
+//        AlertDialog alertDialog = new AlertDialog.Builder(BhargavActivity.this).create();
+//        alertDialog.setTitle("Really Exit?");
+//        alertDialog.setMessage("Are you sure you want to exit?");
+//        alertDialog.setCancelable(false);
+//        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+//                new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        Intent intent = new Intent(Intent.ACTION_MAIN);
+//                        intent.addCategory(intent.CATEGORY_HOME);
+//                        startActivity(intent);
+//                    }
+//                });
+//
+//        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+//                new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        {
+//                            dialog.cancel();
+//                        }
+//                    }
+//                });
+//
+//        alertDialog.show();
+//    }
+//}
+
 
 
 
