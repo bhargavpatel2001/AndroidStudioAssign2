@@ -2,10 +2,8 @@
 
 package bhargav.patel.n01373029;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,7 +13,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PatelActivity extends AppCompatActivity {
@@ -25,11 +22,13 @@ public class PatelActivity extends AppCompatActivity {
     CheckBox check1, check2, check3, check4, check5;
     Button Nextbtn;
     String text2;
+    String text3;
+    String text4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.patel_activity);
+        setContentView(R.layout.activity_patel);
 
         radiobtnG1 = findViewById(R.id.BhargavRGroup2);
         radiobtnG2 = findViewById(R.id.BhargavRGroup3);
@@ -58,6 +57,7 @@ public class PatelActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 validation();
+
             }
         });
 
@@ -69,13 +69,13 @@ public class PatelActivity extends AppCompatActivity {
         int isSelected = radiobtnG1.getCheckedRadioButtonId();
         int isSelected2 = radiobtnG2.getCheckedRadioButtonId();
 
-        RadioButton rb1 = (RadioButton)findViewById(R.id.BhargavPType1);
-        RadioButton rb2 = (RadioButton)findViewById(R.id.BhargavPType2);
-        RadioButton rb3 = (RadioButton)findViewById(R.id.BhargavPType3);
+        RadioButton rb1 = (RadioButton) findViewById(R.id.BhargavPType1);
+        RadioButton rb2 = (RadioButton) findViewById(R.id.BhargavPType2);
+        RadioButton rb3 = (RadioButton) findViewById(R.id.BhargavPType3);
 
-        RadioButton radioB1 = (RadioButton)findViewById(R.id.BhargavPSize1);
-        RadioButton radioB2 = (RadioButton)findViewById(R.id.BhargavPSize2);
-        RadioButton radioB3 = (RadioButton)findViewById(R.id.BhargavPSize3);
+        RadioButton radioB1 = (RadioButton) findViewById(R.id.BhargavPSize1);
+        RadioButton radioB2 = (RadioButton) findViewById(R.id.BhargavPSize2);
+        RadioButton radioB3 = (RadioButton) findViewById(R.id.BhargavPSize3);
 
 
         if (isSelected == -1) {
@@ -85,7 +85,7 @@ public class PatelActivity extends AppCompatActivity {
             rb1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                 text2 = "Margherita";
+                    text2 = "Margherita";
                 }
             });
 
@@ -103,7 +103,7 @@ public class PatelActivity extends AppCompatActivity {
                 }
             });
 
-            return ;
+            return;
         }
 
         if (isSelected2 == -1) {
@@ -113,20 +113,20 @@ public class PatelActivity extends AppCompatActivity {
             radioB1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    text2 = "Small";
+                    text3 = "Small";
                 }
             });
 
             radioB2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    text2 = "Medium";
+                    text3 = "Medium";
                 }
             });
             radioB3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    text2 = "Large";
+                    text3 = "Large";
                 }
             });
             return;
@@ -135,30 +135,27 @@ public class PatelActivity extends AppCompatActivity {
         if (!check1.isChecked() && !check2.isChecked() && !check3.isChecked() && !check4.isChecked() && !check5.isChecked()) {
 
             Toast.makeText(PatelActivity.this, "Select one of the Pizza Toppings", Toast.LENGTH_SHORT).show();
-
-            if (check1.isChecked()){
-                text2 = "Black Olives";
-            }
-            else if (check2.isChecked()){
-                    text2 = "Green Peppers";
-            }
-            else if (check3.isChecked()){
-                text2 = "Mushrooms";
-            }
-            else if (check4.isChecked()){
-                text2 = "Jalapenos";
-            }
-            else if (check5.isChecked()){
-                text2 = "Extra Cheese";
-            }
-
-            return;
-
-        } else {
-
-            Intent intent = new Intent(PatelActivity.this, PatelActivity2.class);
-            intent.putExtra("Code",text2);
-            startActivity(intent);
         }
+            if (check1.isChecked()) {
+                text4 = "Black Olives";
+            }
+            if (check2.isChecked()) {
+                text4 = "Green Peppers";
+            }
+            if (check3.isChecked()) {
+                text4 = "Mushrooms";
+            }
+            if (check4.isChecked()) {
+                text4 = "Jalapenos";
+            }
+            if (check5.isChecked()) {
+                text4 = "Extra Cheese";
+            }
+        Intent intent = new Intent(PatelActivity.this, PatelActivity2.class);
+        intent.putExtra("Code2", text2);
+        intent.putExtra("Code3", text3);
+        intent.putExtra("Code4", text4);
+        startActivity(intent);
+        }
+
     }
-}

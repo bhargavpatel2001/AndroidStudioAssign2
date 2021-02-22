@@ -6,6 +6,7 @@
     <string name="B_pizza">Boston Pizza</string>
     <string name="P_pizza">Pizza Pizza</string>
     <string-array name = "spinner_array" >
+        <item>Select your Province</item>
         <item>Ontario</item>
         <item>British Columbia</item>
         <item>Alberta</item>
@@ -14,6 +15,8 @@
         <item>New Brunswick</item>
         <item>Nova Scotia</item>
         <item>Saskatchewan</item>
+        <item>Prince Edward Island</item>
+        <item>Newfoundland and Labrador</item>
     </string-array>
 
 </resources>
