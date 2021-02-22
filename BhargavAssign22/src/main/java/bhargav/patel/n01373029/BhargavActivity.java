@@ -21,8 +21,9 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class BhargavActivity extends AppCompatActivity {
-    // defining  Global variables
     String webs;
+    int text;
+    int img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,13 +35,14 @@ public class BhargavActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BhargavActivity.this, PatelActivity.class);
+                intent.putExtra("textId",text);
+                intent.putExtra("imgId",img);
                 startActivity(intent);
             }
         });
     }
 
     // Function onPrepareOptionsMenu
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
@@ -49,11 +51,15 @@ public class BhargavActivity extends AppCompatActivity {
         RadioButton pizzaB = findViewById(R.id.BhargavStore2);
         RadioButton pizzaP = findViewById(R.id.BhargavStore3);
 
+        menu.findItem(R.id.BhargavImage).setVisible(false);
+
         // First shops setOnClickListener. Basically when they select first radio button and clicks on the image button.
         pizzaLc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.little_caesars_pizza_round);
+                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.little_caesars_pizza_round).setVisible(true);
+                text = R.string.Lc_pizza;
+                img = R.mipmap.little_caesars_pizza_round;
                 webs = "https://littlecaesars.ca";
             }
         });
@@ -62,7 +68,9 @@ public class BhargavActivity extends AppCompatActivity {
         pizzaB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.boston_pizza_round);
+                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.boston_pizza_round).setVisible(true);
+                text = R.string.B_pizza;
+                img = R.mipmap.boston_pizza_round;
                 webs = "https://bostonpizza.com";
             }
         });
@@ -71,7 +79,10 @@ public class BhargavActivity extends AppCompatActivity {
         pizzaP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.pizza_pizza_round);
+                menu.findItem(R.id.BhargavImage).setIcon(R.mipmap.pizza_pizza_round).setVisible(true);
+                text = R.string.P_pizza;
+                img = R.mipmap.pizza_pizza_round;
+
                 webs = "https://www.pizzapizza.ca";
             }
         });
@@ -79,7 +90,6 @@ public class BhargavActivity extends AppCompatActivity {
     }
 
 //Menu's OnCreateOptionsMenu Function
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -123,7 +133,6 @@ public class BhargavActivity extends AppCompatActivity {
     }
 
 //OnBackKeyPressed
-
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)

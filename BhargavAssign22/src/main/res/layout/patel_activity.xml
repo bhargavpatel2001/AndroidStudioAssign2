@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,11 +7,28 @@
     android:background="#4B5CBD"
     tools:context=".PatelActivity">
 
-    <!--Pizza Type-->
+    <TextView
+        android:id="@+id/BhargavTV2"
+        android:layout_width="111dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201">
 
-    <!--Radio Group for Pizza size -->
+    </TextView>
 
-    <!--    CheckBoxes for Pizza Toppings-->
+    <ImageView
+        android:id="@+id/BhargavImage2"
+        android:layout_width="189dp"
+        android:layout_height="86dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
 
     <RadioGroup
         android:id="@+id/BhargavRGroup2"
@@ -20,10 +36,10 @@
         android:layout_height="192dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34">
+        app:layout_constraintVertical_bias="0.408">
 
         <TextView
             android:id="@+id/BhargavPType"
@@ -35,19 +51,25 @@
             android:id="@+id/BhargavPType1"
             android:layout_width="148dp"
             android:layout_height="wrap_content"
-            android:text="Margherita"></RadioButton>
+            android:text="Margherita">
+
+        </RadioButton>
 
         <RadioButton
             android:id="@+id/BhargavPType2"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:text="Pepperoni"></RadioButton>
+            android:text="Pepperoni">
+
+        </RadioButton>
 
         <RadioButton
             android:id="@+id/BhargavPType3"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:text="Chesse"></RadioButton>
+            android:text="Cheese">
+
+        </RadioButton>
 
     </RadioGroup>
 
@@ -57,10 +79,10 @@
         android:layout_height="196dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343">
+        app:layout_constraintVertical_bias="0.41">
 
         <TextView
             android:id="@+id/BhargavPSize"
@@ -72,19 +94,25 @@
             android:id="@+id/BhargavPSize1"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:text="Small"></RadioButton>
+            android:text="Small">
+
+        </RadioButton>
 
         <RadioButton
             android:id="@+id/BhargavPSize2"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:text="Medium"></RadioButton>
+            android:text="Medium">
+
+        </RadioButton>
 
         <RadioButton
             android:id="@+id/BhargavPSize3"
             android:layout_width="146dp"
             android:layout_height="wrap_content"
-            android:text="Large"></RadioButton>
+            android:text="Large">
+
+        </RadioButton>
 
     </RadioGroup>
 
@@ -95,10 +123,12 @@
         android:text="Choose your Toppings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.344"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintTop_toBottomOf="@+id/BhargavTV2"
+        app:layout_constraintVertical_bias="0.471" >
+
+    </TextView>
 
     <CheckBox
         android:id="@+id/BhargavPToppings4"
@@ -111,7 +141,9 @@
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings"
-        app:layout_constraintVertical_bias="1.0"></CheckBox>
+        app:layout_constraintVertical_bias="1.0">
+
+    </CheckBox>
 
     <CheckBox
         android:id="@+id/BhargavPToppings3"
@@ -124,7 +156,9 @@
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings1"
-        app:layout_constraintVertical_bias="1.0"></CheckBox>
+        app:layout_constraintVertical_bias="1.0">
+
+    </CheckBox>
 
     <CheckBox
         android:id="@+id/BhargavPToppings2"
@@ -137,7 +171,9 @@
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings5"
-        app:layout_constraintVertical_bias="1.0"></CheckBox>
+        app:layout_constraintVertical_bias="1.0">
+
+    </CheckBox>
 
     <CheckBox
         android:id="@+id/BhargavPToppings1"
@@ -150,7 +186,9 @@
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings2"
-        app:layout_constraintVertical_bias="0.0"></CheckBox>
+        app:layout_constraintVertical_bias="0.0">
+
+    </CheckBox>
 
     <CheckBox
         android:id="@+id/BhargavPToppings5"
@@ -163,18 +201,23 @@
         app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings4"
-        app:layout_constraintVertical_bias="1.0"></CheckBox>
+        app:layout_constraintVertical_bias="1.0">
 
-    <TextView
-        android:layout_width="41dp"
-        android:layout_height="23dp"
+    </CheckBox>
+
+    <Button
+        android:id="@+id/BhargavMvScreen2"
+        android:layout_width="85dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="28dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.404"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BhargavPToppings3"
-        app:layout_constraintVertical_bias="1.0"></TextView>
+        app:layout_constraintVertical_bias="0.0">
+
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

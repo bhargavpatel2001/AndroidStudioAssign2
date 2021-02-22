@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/pizza"
         android:supportsRtl="true"
         android:theme="@style/Theme.BhargavAssign2">
+        <activity android:name=".PatelActivity2"/>
         <activity android:name=".PatelActivity"/>
         <activity android:name=".BhargavActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

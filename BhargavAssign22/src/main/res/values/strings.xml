@@ -2,4 +2,18 @@
 <resources>
     <string name="app_name">Bhargav Patel n01373029</string>
     <string name="MainId">Hello World!</string>
+    <string name="Lc_pizza">Little Caesars Pizza</string>
+    <string name="B_pizza">Boston Pizza</string>
+    <string name="P_pizza">Pizza Pizza</string>
+    <string-array name = "spinner_array" >
+        <item>Ontario</item>
+        <item>British Columbia</item>
+        <item>Alberta</item>
+        <item>Manitoba</item>
+        <item>Quebec</item>
+        <item>New Brunswick</item>
+        <item>Nova Scotia</item>
+        <item>Saskatchewan</item>
+    </string-array>
+
 </resources>

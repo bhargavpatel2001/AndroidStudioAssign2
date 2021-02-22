@@ -34,21 +34,23 @@
             android:layout_width="335dp"
             android:layout_height="102dp"
             android:drawableRight="@mipmap/little_caesars_pizza_round"
-            android:text="Little Caesars Pizza"></RadioButton>
+            android:text="@string/Lc_pizza">
+
+        </RadioButton>
 
         <RadioButton
             android:id="@+id/BhargavStore2"
             android:layout_width="335dp"
             android:layout_height="95dp"
             android:drawableRight="@mipmap/boston_pizza"
-            android:text="Boston Pizza" />
+            android:text="@string/B_pizza" />
 
         <RadioButton
             android:id="@+id/BhargavStore3"
             android:layout_width="335dp"
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/pizza_pizza_foreground"
-            android:text="Pizza Pizza" />
+            android:text="@string/P_pizza" />
 
 
     </RadioGroup>
