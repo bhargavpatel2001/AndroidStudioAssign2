@@ -1,6 +1,7 @@
 package bhargav.patel.n01373029;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -15,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
@@ -176,6 +178,34 @@ public class PatelActivity2 extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed(){
+        AlertDialog alertDialog = new AlertDialog.Builder(PatelActivity2.this).create();
+        alertDialog.setTitle("Really Exit?");
+        alertDialog.setMessage("Are you sure you want to exit?");
+        alertDialog.setCancelable(false);
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(intent.CATEGORY_HOME);
+                        startActivity(intent);
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        {
+                            dialog.cancel();
+                        }
+                    }
+                });
+
+        alertDialog.show();
     }
 
 }

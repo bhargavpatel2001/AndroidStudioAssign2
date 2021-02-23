@@ -2,6 +2,7 @@
 
 package bhargav.patel.n01373029;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PatelActivity extends AppCompatActivity {
@@ -108,6 +110,7 @@ public class PatelActivity extends AppCompatActivity {
         }
         if (check5.isChecked()) {
             buffer.append(check5.getText() + "\n");
+
         }
 
         if (isSelected == -1) {
@@ -128,5 +131,33 @@ public class PatelActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    public void onBackPressed(){
+        AlertDialog alertDialog = new AlertDialog.Builder(PatelActivity.this).create();
+        alertDialog.setTitle("Really Exit?");
+        alertDialog.setMessage("Are you sure you want to exit?");
+        alertDialog.setCancelable(false);
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(intent.CATEGORY_HOME);
+                        startActivity(intent);
+                    }
+                });
 
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        {
+                            dialog.cancel();
+                        }
+                    }
+                });
+
+        alertDialog.show();
+    }
+}
     }

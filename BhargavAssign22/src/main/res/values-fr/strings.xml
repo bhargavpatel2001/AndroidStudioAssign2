@@ -2,4 +2,8 @@
 <resources>
     <string name="app_name">BhargavAssign2</string>
     <string name="MainId">Bonjour Le monde!</string>
+    <string name="Id_Text">textId</string>
+    <string name="Id_Img">imgId</string>
+    <string name="AlertTitle">Closing Activity</string>
+    <string name="AlertMsg">Are you sure you want to close this activity?</string>
 </resources>

@@ -116,7 +116,7 @@ public class BhargavActivity extends AppCompatActivity {
 
             // If the Image button is pressed execute this
             case R.id.BhargavImage:
-                Toast.makeText(this, "This is the original website for your pizza store selected", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"This is the original website for your pizza store selected", Toast.LENGTH_LONG).show();
                 intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse(webs));
                 startActivity(intent);
@@ -124,7 +124,7 @@ public class BhargavActivity extends AppCompatActivity {
 
             // If the myName button is pressed execute this
             case R.id.BhargavAddons:
-                Toast.makeText(this, "Please do not click this and wake me up", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Please do not click this and wake me up", Toast.LENGTH_LONG).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -137,8 +137,8 @@ public class BhargavActivity extends AppCompatActivity {
     public void onBackPressed() {
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Closing Activity")
-                .setMessage("Are you sure you want to close this activity?")
+                .setTitle(R.string.AlertTitle)
+                .setMessage(R.string.AlertMsg)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -150,37 +150,6 @@ public class BhargavActivity extends AppCompatActivity {
                 .show();
     }
 }
-
-// long code for Alert Dialog box
-//    @Override
-//    public void onBackPressed(){
-//        AlertDialog alertDialog = new AlertDialog.Builder(BhargavActivity.this).create();
-//        alertDialog.setTitle("Really Exit?");
-//        alertDialog.setMessage("Are you sure you want to exit?");
-//        alertDialog.setCancelable(false);
-//        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
-//                new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        Intent intent = new Intent(Intent.ACTION_MAIN);
-//                        intent.addCategory(intent.CATEGORY_HOME);
-//                        startActivity(intent);
-//                    }
-//                });
-//
-//        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
-//                new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        {
-//                            dialog.cancel();
-//                        }
-//                    }
-//                });
-//
-//        alertDialog.show();
-//    }
-//}
 
 
 
