@@ -26,6 +26,10 @@ public class PatelActivity2 extends AppCompatActivity {
     EditText textInputCCard;
     Spinner spinner;
     Button btnNext;
+    String InputUserName;
+    String InputAddress;
+    String InputCCard;
+    String spinnerUse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +45,12 @@ public class PatelActivity2 extends AppCompatActivity {
 
         // Reciever information from the order Screen
         TextView textName2 = findViewById(R.id.BhargavTV3);
-        TextView textName3 = findViewById(R.id.BhargavTV4);
-        TextView textName4 = findViewById(R.id.BhargavTV5);
+
         Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
         if (intent != null);{
-            String text2 = bundle.getString("Code2");
+            String text2 = intent.getStringExtra("Code2");
             textName2.setText(text2);
-            String text3 = bundle.getString("Code3");
-            textName3.setText(text3);
-            String text4 = bundle.getString("Code4");
-            textName4.setText(text4);
         }
 
         // Labeling spinner and using a string to make a Spinner from the strings.xml file
@@ -145,18 +144,37 @@ public class PatelActivity2 extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-               String spinnerUse = spinner.getItemAtPosition(position).toString();
+                spinnerUse = spinner.getItemAtPosition(position).toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
-                if(spinner.equals("Select your Provience")){
+                if(spinner.equals("Select your Province")){
                     Toast.makeText(PatelActivity2.this, "Select a Provience", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (textInputUsername.length() >= 3 && textInputCCard.length() == 16){
+
+                    InputUserName = textInputUsername.getText().toString();
+                    InputAddress = textInputAddress.getText().toString();
+                    InputCCard = textInputCCard.getText().toString();
+
+                    Intent intent = new Intent(PatelActivity2.this, PatelActivity3.class);
+                    intent.putExtra("password",InputUserName);
+                    intent.putExtra("password2",InputAddress);
+                    intent.putExtra("password3",InputCCard);
+                    intent.putExtra("password4",spinnerUse);
+                    startActivity(intent);
+
+                }
+            }
+        });
 
     }
 

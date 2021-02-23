@@ -21,9 +21,7 @@ public class PatelActivity extends AppCompatActivity {
     RadioGroup radiobtnG2;
     CheckBox check1, check2, check3, check4, check5;
     Button Nextbtn;
-    String text2;
-    String text3;
-    String text4;
+    StringBuffer buffer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +35,7 @@ public class PatelActivity extends AppCompatActivity {
         check3 = findViewById(R.id.BhargavPToppings3);
         check4 = findViewById(R.id.BhargavPToppings4);
         check5 = findViewById(R.id.BhargavPToppings5);
+        buffer = new StringBuffer();
         Nextbtn = findViewById(R.id.BhargavMvScreen2);
 
         //recieves data from previous Activity
@@ -77,85 +76,57 @@ public class PatelActivity extends AppCompatActivity {
         RadioButton radioB2 = (RadioButton) findViewById(R.id.BhargavPSize2);
         RadioButton radioB3 = (RadioButton) findViewById(R.id.BhargavPSize3);
 
+        if (rb1.isChecked()) {
+            buffer.append(rb1.getText() + "\n");
+        }
+        if (rb2.isChecked()) {
+            buffer.append(rb1.getText() + "\n");
+        }
+        if (rb3.isChecked()) {
+            buffer.append(rb1.getText() + "\n");
+        }
+        if (radioB1.isChecked()) {
+            buffer.append(radioB1.getText() + "\n");
+        }
+        if (radioB2.isChecked()) {
+            buffer.append(radioB2.getText() + "\n");
+        }
+        if (radioB3.isChecked()) {
+            buffer.append(radioB3.getText() + "\n");
+        }
+        if (check1.isChecked()) {
+            buffer.append(check1.getText() + "\n");
+        }
+        if (check2.isChecked()) {
+            buffer.append(check2.getText() + "\n");
+        }
+        if (check3.isChecked()) {
+            buffer.append(check3.getText() + "\n");
+        }
+        if (check4.isChecked()) {
+            buffer.append(check4.getText() + "\n");
+        }
+        if (check5.isChecked()) {
+            buffer.append(check5.getText() + "\n");
+        }
 
         if (isSelected == -1) {
 
             Toast.makeText(PatelActivity.this, "Select one of the Pizza Types", Toast.LENGTH_SHORT).show();
-
-            rb1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text2 = "Margherita";
-                }
-            });
-
-            rb2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text2 = "Pepperoni";
-                }
-            });
-
-            rb3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text2 = "Cheese";
-                }
-            });
-
-            return;
-        }
-
-        if (isSelected2 == -1) {
+        } else if (isSelected2 == -1) {
 
             Toast.makeText(PatelActivity.this, "Select one of the Pizza Size", Toast.LENGTH_SHORT).show();
-
-            radioB1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text3 = "Small";
-                }
-            });
-
-            radioB2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text3 = "Medium";
-                }
-            });
-            radioB3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    text3 = "Large";
-                }
-            });
-            return;
-        }
-
-        if (!check1.isChecked() && !check2.isChecked() && !check3.isChecked() && !check4.isChecked() && !check5.isChecked()) {
+        } else if (!check1.isChecked() && !check2.isChecked() && !check3.isChecked() && !check4.isChecked() && !check5.isChecked()) {
 
             Toast.makeText(PatelActivity.this, "Select one of the Pizza Toppings", Toast.LENGTH_SHORT).show();
+        } else {
+            String send = buffer.toString();
+            Intent intent = new Intent(PatelActivity.this, PatelActivity2.class);
+            intent.putExtra("Code2", send);
+
+            startActivity(intent);
         }
-            if (check1.isChecked()) {
-                text4 = "Black Olives";
-            }
-            if (check2.isChecked()) {
-                text4 = "Green Peppers";
-            }
-            if (check3.isChecked()) {
-                text4 = "Mushrooms";
-            }
-            if (check4.isChecked()) {
-                text4 = "Jalapenos";
-            }
-            if (check5.isChecked()) {
-                text4 = "Extra Cheese";
-            }
-        Intent intent = new Intent(PatelActivity.this, PatelActivity2.class);
-        intent.putExtra("Code2", text2);
-        intent.putExtra("Code3", text3);
-        intent.putExtra("Code4", text4);
-        startActivity(intent);
-        }
+
+    }
 
     }

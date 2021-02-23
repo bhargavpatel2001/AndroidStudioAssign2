@@ -7,7 +7,37 @@
     android:background="#4B5CBD"
     tools:context=".PatelActivity3">
 
+    <TextView
+        android:id="@+id/BhargavBill"
+        android:layout_width="205dp"
+        android:layout_height="231dp"
+        tools:layout_editor_absoluteX="195dp"
+        tools:layout_editor_absoluteY="7dp">
 
+    </TextView>
 
+    <TextView
+        android:id="@+id/BhargavCheckOut"
+        android:layout_width="209dp"
+        android:layout_height="214dp"
+        app:layout_constraintBottom_toTopOf="@+id/BhargavMvFinal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
+    </TextView>
+
+    <Button
+        android:id="@+id/BhargavMvFinal"
+        android:layout_width="242dp"
+        android:layout_height="114dp"
+        android:text="Check Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
