@@ -11,8 +11,12 @@
         android:id="@+id/BhargavBill"
         android:layout_width="205dp"
         android:layout_height="231dp"
-        tools:layout_editor_absoluteX="195dp"
-        tools:layout_editor_absoluteY="7dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </TextView>
 
@@ -22,10 +26,10 @@
         android:layout_height="214dp"
         app:layout_constraintBottom_toTopOf="@+id/BhargavMvFinal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.022"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.865">
 
     </TextView>
 
@@ -33,11 +37,13 @@
         android:id="@+id/BhargavMvFinal"
         android:layout_width="242dp"
         android:layout_height="114dp"
-        android:text="Check Out"
+        android:text="@string/check_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942"></Button>
+        app:layout_constraintVertical_bias="0.946">
+
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>

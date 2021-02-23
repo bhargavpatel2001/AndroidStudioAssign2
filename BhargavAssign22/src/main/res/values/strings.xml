@@ -12,6 +12,18 @@
     <string name="BhargavHelp">Tell your friend to get the app and ask them</string>
     <string name="BhargavImage">This is the original website for your pizza store selected</string>
     <string name="BhargavAddons">Please do not click this and wake me up</string>
+    <string name="choose_store">Choose Store</string>
+    <string name="black_olives">Black Olives</string>
+    <string name="extra_cheese">Extra Cheese</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="jalapenos">Jalapenos</string>
+    <string name="green_peppers">Green Peppers</string>
+    <string name="next">Next</string>
+    <string name="john_wick">John wick</string>
+    <string name="_0000000000000000">0000000000000000</string>
+    <string name="_15_creditview_drive">15 Creditview Drive</string>
+    <string name="order">Order</string>
+    <string name="check_out">Check Out</string>
     <string-array name = "spinner_array" >
         <item>Select your Province</item>
         <item>Ontario</item>
